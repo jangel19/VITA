@@ -1,72 +1,101 @@
 # VITA Health
 
-VITA Health is a wearable health-tech platform currently under development, designed to track real-time biometrics such as heart rate, SpO2, motion, and temperature. The system combines embedded IoT hardware (ESP32 microcontroller + sensors) with a mobile app interface, aiming to deliver accurate, privacy-focused health monitoring.
+VITA Health is a student-built wearable health prototype focused on collecting and visualizing basic biometric and movement data using embedded hardware. The project explores end-to-end data flow from sensors on an ESP32 device to a simple user-facing interface, with an emphasis on embedded systems, Bluetooth communication, and hardware–software integration.
+
+This repository reflects an **early-stage prototype**, not a finished consumer product.
 
 ---
 
-## Status: In Progress
+## Project Status
 
-### Project Overview
+**Status:** Prototype / Paused  
+**Timeline:** February 2025 – Present  
 
-- The initial version of the VITA app was developed in **Swift** for iOS devices.
-- We are currently **migrating the UI to React Native** to optimize performance, scalability, and compatibility across both **Android and iOS** platforms.
-- The goal is to create a fast, secure, and responsive cross-platform app with real-time data visualization and long-term health trend analytics.
-
----
-
-### Hardware & Sensor Integration
-
-We’re currently testing and validating sensor data accuracy and Bluetooth communication protocols.
-
-#### What’s working:
-- **ESP32 board** is successfully streaming data via Bluetooth Low Energy (BLE)
-- **Heart rate sensor (MAX30102)** is transmitting live pulse and SpO2 data
-- **Accelerometer** and **gyroscope** are tracking motion events and orientation
-- Basic connectivity and sensor logic is being prototyped in **Arduino IDE**
-
-#### Ongoing Work:
-- Calibrating sensor accuracy across different users and conditions
-- Testing BLE connection stability and throughput
-- Creating fallback mechanisms and alert logic for disconnected states
-- Improving battery optimization and packaging for wearability
+Core hardware functionality and data flow were implemented and validated. The project is not currently under active feature development.
 
 ---
 
-### UI Development (React Native)
+## Project Overview
 
-The user interface is being rebuilt from the ground up to provide a clean, intuitive, and mobile-first experience. Planned features include:
+The goal of VITA Health was to design and prototype a wearable system capable of:
 
-- 📊 Real-time health metrics dashboard
-- 📈 Historical data charting and analytics
-- 🛏️ Sleep, activity, and recovery tracking
-- 🔒 Secure user authentication and device linking (via Supabase)
+- Collecting heart rate and motion data from onboard sensors  
+- Computing basic metrics such as steps, activity level, and heart rate trends  
+- Transmitting data wirelessly using Bluetooth Low Energy (BLE)  
+- Displaying collected data through a simple web-based interface  
 
----
-
-### Tech Stack
-
-- `ESP32` (Bluetooth Low Energy microcontroller)
-- `Arduino IDE` (sensor development & testing)
-- `MAX30102` (SpO2 + Heart Rate sensor)
-- `Accelerometer` / `Gyroscope`
-- `React Native` (upcoming UI framework)
-- `Supabase` (user auth & cloud database)
-- `Figma` (UI/UX wireframing)
+The project was developed as a **team-based engineering effort** to explore embedded firmware, sensor integration, and basic backend data storage.
 
 ---
 
-### Timeline
+## Hardware & Embedded Systems
 
-This is an evolving project with many moving parts — sensor firmware, BLE protocols, and UI logic are being tested and refined in parallel. Our goal is to have an MVP ready for demo in late 2025/early 2026.
+**What was implemented:**
+
+- ESP32 microcontroller running Arduino-based C/C++ firmware  
+- Heart rate sensor for pulse data collection  
+- Accelerometer used to estimate steps and general movement/activity  
+- Custom PCB integrating sensors and power components  
+- Haptic motor used for basic notifications and alerts  
+- BLE communication between the ESP32 and a client interface  
+
+**Firmware responsibilities included:**
+
+- Sensor sampling and signal handling  
+- Simple step and activity estimation logic  
+- BLE data packaging and transmission  
+- Error handling for disconnected or unstable BLE states  
 
 ---
 
-### Team
+## Software & Data Flow
 
-VITA is developed by a team of six passionate student engineers with backgrounds in embedded systems, iOS development, UI/UX, and cloud architecture.
+- Sensor data was transmitted from the ESP32 over BLE  
+- A lightweight interface was built to display real-time and historical readings  
+- Supabase was used for basic data storage and user authentication  
+- The software stack was intentionally minimal to focus on validating hardware-to-UI communication  
 
 ---
 
-### Note
+## Tech Stack
 
-This is a work-in-progress repository. Some components and code will change drastically as we transition away from the original Swift-based app and toward a unified cross-platform codebase. Contributions and feedback are welcome!
+**Embedded / Hardware**
+- ESP32  
+- Arduino-based C/C++  
+- Heart rate sensor  
+- Accelerometer  
+- Custom PCB  
+- Haptic motor  
+
+**Software**
+- Bluetooth Low Energy (BLE)  
+- Supabase (database & auth)  
+- JavaScript (basic UI and data display)  
+
+---
+
+## Team & Collaboration
+
+VITA Health was developed by a small student team. Work was divided across:
+
+- Embedded firmware and sensor integration  
+- PCB design and hardware assembly  
+- BLE communication and data handling  
+- Basic UI and backend integration  
+
+My primary contributions focused on **embedded firmware, BLE communication, metric computation, and hardware integration**, while collaborating closely with teammates responsible for UI and system organization.
+
+---
+
+## Notes
+
+- This repository represents a **prototype and learning project**
+- Code quality and structure reflect experimentation rather than production standards  
+- Some components may be incomplete or simplified  
+- The project is intentionally documented honestly to reflect its educational and exploratory nature  
+
+---
+
+## License
+
+This project is shared for educational and demonstration purposes.
